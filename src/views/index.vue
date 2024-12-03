@@ -11,14 +11,14 @@ import {
   onUnmounted,
   ref,
 } from 'vue';
-import {useRouter, useRoute, onBeforeRouteLeave} from "vue-router";
+import {useRouter, useRoute} from "vue-router";
 import {common} from "@/api/test";
 
 const router = useRouter()
 const route = useRoute()
 
 const handleCommon = () => {
-  common().then(res => {
+  common({ param: 'hello' }).then(res => {
     console.log(res)
   })
 }
