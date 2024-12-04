@@ -1,7 +1,5 @@
-<template>
-  <div>
-    <el-button @click="handleCommon">提交</el-button>
-  </div>
+<template lang="pug">
+  el-button(@click="handleCommon") 提交
 </template>
 
 <script setup lang="ts">
