@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.mjs\");\n\nconst routes = [{\n  path: '/',\n  redirect: {\n    path: '/index'\n  }\n}, {\n  path: '/index',\n  name: 'index',\n  component: () => __webpack_require__.e(/*! import() */ \"src_views_index_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/views/index.vue */ \"./src/views/index.vue\"))\n}, {\n  path: '/403',\n  name: '403',\n  component: () => __webpack_require__.e(/*! import() */ \"src_views_error_403_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/views/error/403.vue */ \"./src/views/error/403.vue\"))\n}];\nconst router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({\n  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(\"\"),\n  routes\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack://vue-demo/./src/router/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.mjs\");\n\nconst routes = [{\n  path: '/',\n  redirect: {\n    path: '/index'\n  }\n}, {\n  path: '/index',\n  name: 'index',\n  component: () => __webpack_require__.e(/*! import() */ \"src_views_index_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/views/index.vue */ \"./src/views/index.vue\"))\n}, {\n  path: '/403',\n  name: '403',\n  component: () => __webpack_require__.e(/*! import() */ \"src_views_error_403_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/views/error/403.vue */ \"./src/views/error/403.vue\"))\n}, {\n  path: '/404',\n  name: '404',\n  component: () => __webpack_require__.e(/*! import() */ \"src_views_error_404_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/views/error/404.vue */ \"./src/views/error/404.vue\"))\n}];\nconst router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({\n  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(\"/\"),\n  routes\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack://vue-demo/./src/router/index.ts?");
 
 /***/ }),
 
@@ -315,7 +315,7 @@ eval("module.exports = \"data:image/svg+xml;utf8,%3Csvg class=%27icon%27 width=%
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
-/******/ 		__webpack_require__.p = "";
+/******/ 		__webpack_require__.p = "/";
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
