@@ -1,5 +1,12 @@
 <template lang="pug">
   el-button(@click="handleCommon") 提交
+  div(class="name"): span(style="font-size: 30px") 张三
+    el-button submit
+  .name(style="font-size: 50px") 张三
+    .n1 王五
+      el-button test
+  #name 李四
+
 </template>
 
 <script setup lang="ts">
@@ -26,6 +33,9 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-
+<style scoped lang="sass">
+.name
+  color: salmon
+  .n1
+    font-size: 30px
 </style>
