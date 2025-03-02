@@ -1,41 +1,47 @@
-<template lang="pug">
-  el-button(@click="handleCommon") 提交
-  div(class="name"): span(style="font-size: 30px") 张三
-    el-button submit
-  .name(style="font-size: 50px") 张三
-    .n1 王五
-      el-button test
-  #name 李四
-
+<template>
+  <div>
+    <el-upload
+        ref="upload"
+        class="upload-demo"
+        action="http://zuozhuan.cfd:8090/file/upload"
+        :limit="1"
+        :on-exceed="handleExceed"
+        :auto-upload="false"
+    >
+      <template #trigger>
+        <el-button type="primary">select file</el-button>
+      </template>
+      <el-button class="ml-3" type="success" @click="submitUpload">
+        upload to server
+      </el-button>
+      <template #tip>
+        <div class="el-upload__tip text-red">
+          limit 1 file, new file will cover the old file
+        </div>
+      </template>
+    </el-upload>
+  </div>
 </template>
 
-<script setup lang="ts">
-import {
-  reactive,
-  onMounted,
-  onUnmounted,
-  ref,
-} from 'vue';
-import {useRouter, useRoute} from "vue-router";
-import {common} from "@/api/test";
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { genFileId } from 'element-plus'
+import type { UploadInstance, UploadProps, UploadRawFile } from 'element-plus'
 
-const router = useRouter()
-const route = useRoute()
+const upload = ref<UploadInstance>()
 
-const handleCommon = () => {
-  common({ param: 'hello' }).then(res => {
-    console.log(res)
-  })
+const handleExceed: UploadProps['onExceed'] = (files) => {
+  upload.value!.clearFiles()
+  const file = files[0] as UploadRawFile
+  file.uid = genFileId()
+  upload.value!.handleStart(file)
 }
 
-onMounted(() => {
-  console.log("onMounted")
-})
+const submitUpload = () => {
+  upload.value!.submit()
+}
 </script>
 
-<style scoped lang="sass">
-.name
-  color: salmon
-  .n1
-    font-size: 30px
+<style>
+
 </style>
