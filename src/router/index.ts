@@ -4,7 +4,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: {
-      path: '/index'
+      path: '/file'
     }
   },
   {
@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/404',
     name: '404',
     component: () => import('@/views/error/404.vue')
+  },
+  {
+    path: '/file',
+    name: 'file',
+    component: () => import('@/views/file/file.vue')
   }
 ]
 
